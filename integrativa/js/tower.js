@@ -475,7 +475,7 @@
             resolve();
           })
         },
-        footer: '<ul class="list-keys"><li><img class="key-icon" src="/images/left.png"><img class="key-icon" src="/images/right.png"> Use as setas para selecionar.</li><li><img class="key-icon" src="/images/enter.png"> Aperte <strong>ENTER</strong> para confirmar!</li></ul>'
+        footer: '<ul class="list-keys"><li><img class="key-icon" src="images/left.png"><img class="key-icon" src="images/right.png"> Use as setas para selecionar.</li><li><img class="key-icon" src="images/enter.png"> Aperte <strong>ENTER</strong> para confirmar!</li></ul>'
       })
       
       this.collected = this.collected + 1;
