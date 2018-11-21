@@ -501,6 +501,19 @@
         })
         this.hurting = true;
       }
+      if (this.collected == tower.totalCoins) {
+        var levelUp = this.score > (this.collected * 0.7);
+        var textCompleted = this.score + ' de ' + this.collected;
+        setTimeout(function(){
+          swal({
+            position: 'center',
+            type: levelUp ? 'success' : 'error',
+            title: 'Fim de jogo!',
+            html: textCompleted + ' perguntas respondidas corretamente!',
+            confirmButtonText: levelUp ? 'Próximo nível' : 'Tentar novamente',
+          })
+        }, 2000);
+      }
     },
 
     startFalling: function(allowFallingJump) {
