@@ -77,10 +77,17 @@
   // GAME - SETUP/UPDATE/RENDER
   //===========================================================================
 
-  function run() {
+  function run(currentLevel) {
+    if (typeof currentLevel == "undefined") {
+      currentLevel = 0;
+    }
+    var levels = ["levels/demo", "levels/level1"];
+    if (currentLevel >= levels.length) {
+      currentLevel = levels.length - 1;
+    }
     Game.Load.images(IMAGES, function(images) {
-      Game.Load.json("levels/demo", function(level) {
-        setup(images, level);
+      Game.Load.json(levels[currentLevel], function(level) {
+        setup(images, level, currentLevel);
         Game.run({
           fps:    FPS,
           update: update,
@@ -92,10 +99,10 @@
     });
   }
 
-  function setup(images, level) {
+  function setup(images, level, currentLevel) {
     tower    = new Tower(level);
     monsters = new Monsters(level);
-    player   = new Player();
+    player   = new Player(currentLevel);
     camera   = new Camera();
     renderer = new Renderer(images);
   }
@@ -194,7 +201,7 @@
 
   var Player = Class.create({
 
-    initialize: function() {
+    initialize: function(currentLevel) {
 
       this.x         = col2x(0.5);
       this.y         = row2y(0);
@@ -214,6 +221,7 @@
       this.animation = PLAYER.STAND;
       this.score     = 0;
       this.collected = 0;
+      this.currentLevel = currentLevel;
     },
 
     createCollisionPoints: function() {
@@ -511,6 +519,12 @@
             title: 'Fim de jogo!',
             html: textCompleted + ' perguntas respondidas corretamente!',
             confirmButtonText: levelUp ? 'Próximo nível' : 'Tentar novamente',
+          }).then(function(result){
+            if (levelUp) {
+              run(this.currentLevel + 1);
+            } else {
+              run(this.currentLevel);
+            }
           })
         }, 2000);
       }
@@ -1100,7 +1114,7 @@
   // LETS PLAY!
   //===========================================================================
 
-  run();
+  run(0);
 
   //---------------------------------------------------------------------------
 
