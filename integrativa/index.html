@@ -3,61 +3,50 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-  <title>Tower Platformer</title>
-
+  <title>Integrativa 2018/2</title>
   <link href='http://fonts.googleapis.com/css?family=Cherry+Swash' rel='stylesheet' type='text/css'>
-
-  <style>
-    body            { background: #222; font-family: sans-serif; }
-    #tower          { background: linear-gradient(to bottom, #2980b9, #6dd5fa, #fdc887); background-repeat: no-repeat; }
-    #tower          { position: relative; margin: 1em auto; width: 512px; height: 384px; border: 4px solid #C080C0; }
-    #hud            { position: absolute; bottom: 0em; width: 9em; background-color: #333; opacity: 0.8; border: 4px solid black; }
-    #score          { color: yellow; font-size: 2em; font-family: 'Cherry Swash', cursive }
-    #canvas         { display: inline-block; width: 100%; height: 100%; }
-    #instructions   { color: #222; font-size: 18px; background-color: #ccc; margin-top: 0.5em; padding: 0.5em; border: #C080C0 4px solid; }
-    #instructions b { color: #000; }
-    .key-icon       { height: 20px; }
-    .big-key-icon   { height: 40px; margin-right: 10px; }
-    ul.list-keys    { list-style: none; margin: 0;}
-    .i-row          { display: flex; align-items:center;}
-    @media screen and (min-width:     0px) and (min-height:    0px) { #tower { width:  512px; height: 384px; font-size:  7pt; } } /* block = 16 */
-    @media screen and (min-width:   840px) and (min-height:  530px) { #tower { width:  640px; height: 480px; font-size:  9pt; } } /* block = 20 */
-    @media screen and (min-width:   968px) and (min-height:  626px) { #tower { width:  768px; height: 576px; font-size: 11pt; } } /* block = 24 */
-    @media screen and (min-width:  1096px) and (min-height:  722px) { #tower { width:  896px; height: 672px; font-size: 13pt; } } /* block = 28 */
-    @media screen and (min-width:  1224px) and (min-height:  818px) { #tower { width: 1024px; height: 768px; font-size: 15pt; } } /* block = 32 */
-  </style>
-
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/tower.css">
 </head>
-
 <body>
-
-  <div id="tower">
-
-    <div id="hud">
-      <table>
-        <tr><td><img src="images/coin.png"></td><td><span id="score"></span></td></tr>
-      </table>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div id="instructions">
+          <div class="row">
+            <div class="col">
+              <img class="big-key-icon" src="images/arrows.png"><br/> USE AS SETAS PARA ANDAR E SUBIR/DESCER ESCADAS.
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <img class="big-key-icon" src="images/space.png"><br/> APERTE ESPAÇO PARA PULAR.
+            </div>
+          </div>
+          <span id="debug"></span>
+        </div>
+      </div>
+      <div class="col-12 col-md-9">
+          <div id="tower">
+            <div id="hud">
+              <table>
+                <tr><td><img src="images/coin.png"></td><td><span id="score"></span></td></tr>
+              </table>
+            </div>
+        
+            <canvas id="canvas">
+              <div class="unsupported">
+                Este navegador não suporta o elemento &lt;canvas&gt;
+              </div>
+            </canvas>
+          </div>
+      </div>
     </div>
-
-    <canvas id="canvas">
-      <div class="unsupported">
-        Este navegador não suporta o elemento &lt;canvas&gt;
-      </div>
-    </canvas>
-
-    <div id="instructions">
-      <div class="i-row">
-        <img class="big-key-icon" src="images/arrows.png"> USE AS SETAS PARA ANDAR E SUBIR/DESCER ESCADAS.
-      </div>
-      <div class="i-row">
-        <img class="big-key-icon" src="images/space.png"> APERTE ESPAÇO PARA PULAR.
-      </div>
-  
-      <span id="debug"></span>
-    </div>
-
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.29.1/dist/sweetalert2.all.min.js"></script>
+  
+
+  
+  <script src="js/sweetalert2.all.min.js"></script>
 
   <script src="js/fpsmeter.min.js"></script>
   <script src="js/common.js"></script>

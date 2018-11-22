@@ -77,24 +77,33 @@
   // GAME - SETUP/UPDATE/RENDER
   //===========================================================================
 
-  function run(currentLevel) {
+  function run(currentLevel, addKeyEvents) {
+    var levels = ["levels/demo", "levels/level1"];
+
     if (typeof currentLevel == "undefined") {
       currentLevel = 0;
     }
-    var levels = ["levels/demo", "levels/level1"];
+
+    if (typeof addKeyEvents == "undefined") {
+      addKeyEvents = true;
+    }
+
     if (currentLevel >= levels.length) {
       currentLevel = levels.length - 1;
     }
+
     Game.Load.images(IMAGES, function(images) {
       Game.Load.json(levels[currentLevel], function(level) {
         setup(images, level, currentLevel);
-        Game.run({
-          fps:    FPS,
-          update: update,
-          render: render
-        });
-        Dom.on(document, 'keydown', function(ev) { return onkey(ev, ev.keyCode, true);  }, false);
-        Dom.on(document, 'keyup',   function(ev) { return onkey(ev, ev.keyCode, false); }, false);
+        if (addKeyEvents) {
+          Game.run({
+            fps:    FPS,
+            update: update,
+            render: render
+          });
+          Dom.on(document, 'keydown', function(ev) { return onkey(ev, ev.keyCode, true);  }, false);
+          Dom.on(document, 'keyup',   function(ev) { return onkey(ev, ev.keyCode, false); }, false);
+        }
       });
     });
   }
@@ -475,8 +484,11 @@
       const question = tower.questions[this.score];
       
       const {value: answer} = await swal({
+        background: '#fff url(images/brick.png)',
+        width: 700,
         title: question.text,
         input: 'radio',
+        allowOutsideClick: false,
         inputOptions: question.options,
         inputValidator: (value) => {
           return new Promise((resolve) => {
@@ -503,7 +515,6 @@
           position: 'top',
           type: 'error',
           title: 'Errado!',
-          html: 'Resposta: <strong>' + question.options[question.response] + '</strong>',
           showConfirmButton: false,
           timer: 3000
         })
@@ -511,22 +522,24 @@
       }
       if (this.collected == tower.totalCoins) {
         var levelUp = this.score > (this.collected * 0.7);
-        var textCompleted = this.score + ' de ' + this.collected;
+        var textCompleted = (levelUp ? 'Você passou!' : 'Não foi dessa vez!' ) + '<br/>' + this.score + ' de ' + this.collected + ' perguntas respondidas corretamente!';
+        var that = this;
         setTimeout(function(){
           swal({
             position: 'center',
             type: levelUp ? 'success' : 'error',
             title: 'Fim de jogo!',
-            html: textCompleted + ' perguntas respondidas corretamente!',
+            html: textCompleted,
             confirmButtonText: levelUp ? 'Próximo nível' : 'Tentar novamente',
+            allowOutsideClick: false
           }).then(function(result){
             if (levelUp) {
-              run(this.currentLevel + 1);
+              run(that.currentLevel + 1, false);
             } else {
-              run(this.currentLevel);
+              run(that.currentLevel, false);
             }
           })
-        }, 2000);
+        }, 600);
       }
     },
 
