@@ -521,8 +521,10 @@
         this.hurting = true;
       }
       if (this.collected == tower.totalCoins) {
-        var levelUp = this.score > (this.collected * 0.7);
-        var textCompleted = (levelUp ? 'Você passou!' : 'Não foi dessa vez!' ) + '<br/>' + this.score + ' de ' + this.collected + ' perguntas respondidas corretamente!';
+        var percent = 100 * this.score / this.collected;
+        var levelUp = percent >= 70;
+        var textCompleted = (levelUp ? 'Você passou!<br/>' : 'Não foi dessa vez!<br/>' ) +
+        (levelUp ? 'Parábens!' : 'Você não conseguiu acertar 70% ou mais das perguntas.');
         var that = this;
         setTimeout(function(){
           swal({
