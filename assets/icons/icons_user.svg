@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>User</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-13.000000, -100.000000)" fill-rule="nonzero" fill="#222222">
+            <path d="M25,123 C31.677274,123 36,121.696513 36,120 C36,115.648936 32.5229091,114 25,114 C17.4770909,114 14,115.648936 14,120 C14,121.696513 18.322726,123 25,123 Z M25,124 C18.372583,124 13,122.761424 13,120 C13,114.238576 18.372583,113 25,113 C31.627417,113 37,114.238576 37,120 C37,122.761424 31.627417,124 25,124 Z M25,111 C27.2614237,111 29,109.261424 29,106 C29,102.942086 27.5050755,101 25,101 C22.4949245,101 21,102.942086 21,106 C21,109.261424 22.7385763,111 25,111 Z M25,112 C22.6862915,112 20,110.313708 20,106 C20,102.686292 21.6862915,100 25,100 C28.3137085,100 30,102.686292 30,106 C30,110.313708 27.3137085,112 25,112 Z" id="User"></path>
+        </g>
+    </g>
+</svg>
