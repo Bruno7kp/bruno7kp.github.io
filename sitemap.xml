@@ -1,57 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://b7kp.com/</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://b7kp.com/chartsfm/update/2025/01/15/zerocharts-problems.html</loc>
+<lastmod>2025-01-15T10:41:21-03:00</lastmod>
 </url>
 <url>
-  <loc>https://b7kp.com/sobre/</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://b7kp.com/chartsfm/update/2025/02/20/chartsfm-publication.html</loc>
+<lastmod>2025-02-20T15:05:26-03:00</lastmod>
 </url>
 <url>
-  <loc>https://b7kp.com/chartsfm/update/2025/04/18/chartsfm-update.html</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://b7kp.com/chartsfm/update/2025/04/18/chartsfm-update.html</loc>
+<lastmod>2025-04-18T10:00:00-03:00</lastmod>
 </url>
 <url>
-  <loc>https://b7kp.com/chartsfm/update/2023/10/01/chartsfm-bugfixes.html</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://b7kp.com/chartsfm/update/2025/04/24/chartsfm-untie-and-dropouts.html</loc>
+<lastmod>2025-04-24T19:00:00-03:00</lastmod>
 </url>
 <url>
-  <loc>https://b7kp.com/chartsfm/update/2019/01/15/chartsfm-hiatus.html</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://b7kp.com/</loc>
 </url>
 <url>
-  <loc>https://b7kp.com/chartsfm/update/2018/10/10/chartsfm-image.html</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://b7kp.com/privacy.html</loc>
 </url>
 <url>
-  <loc>https://b7kp.com/chartsfm/update/2018/10/06/chartsfm-publication.html</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://b7kp.com/sobre/</loc>
 </url>
-<url>
-  <loc>https://b7kp.com/zerocharts/update/2018/10/05/zerocharts-problems.html</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://b7kp.com/privacy</loc>
-  <lastmod>2025-04-22T15:29:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
-
 </urlset>
